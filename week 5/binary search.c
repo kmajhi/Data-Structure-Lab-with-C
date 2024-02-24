@@ -1,33 +1,32 @@
 #include<stdio.h>
 int main(){
-int position, i, n, value;
+int position, i, n, item;
 
-    printf("Enter length of the array: ");
+    printf("Enter array length: ");
     scanf("%d", &n);
-    int array[n];
+    int arr[n];
 
     printf("\n\nEnter %d elements\n", n);
-
     for (i = 0; i < n; i++){
-        scanf("%d", &array[i]);
+        scanf("%d", &arr[i]);
     }
 
-    printf("Enter the value to search: ");
-    scanf("%d", &value);
+    printf("Enter the item to search: ");
+    scanf("%d", &item);
 
     int low = 0;
     int high = n - 1;
     int result = -1;
 
     while (low <= high){
-        int mid = low + (high - low) / 2;
-
-        if (array[mid] == value) {
+        int mid = low + (high-low) / 2;
+        
+        if (arr[mid] == item) {
             result = mid;
             break;
         }
 
-        if (array[mid] < value)
+        if (arr[mid] < item)
             low = mid + 1;
         else
             high = mid - 1;
